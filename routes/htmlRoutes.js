@@ -1,15 +1,14 @@
-<<<<<<< HEAD
+
 const router = require('express').Router();
 const { User, Post, Comment, Like } = require('../models');
 const withAuth = require('../utils/auth');
 
-
 router.get('/', async (req, res) => {
     try {
-        const posts = await Post.findAll({
+        const postData = await Post.findAll({
           include: [{ model: User }, { model: Comment }, { model: Like }],
-          order: [['createdAt', 'DESC']],
         });
+        const posts = postData.map((post) => post.get({ plain: true }));
         res.render('homepage', {
           posts,
           loggedIn: req.session.loggedIn,
@@ -19,6 +18,7 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
       }
 });
+
 
 
 router.get('/blogs', async (req, res) => {
@@ -67,5 +67,5 @@ router.get('/new-post', withAuth, async (req, res) => {
 });
 
 module.exports = router;
-=======
->>>>>>> cdcdf441496b3a5fbdb1f66b11b09d331b381606
+
+
