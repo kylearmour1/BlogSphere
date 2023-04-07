@@ -1,3 +1,4 @@
+
 const router = require('express').Router();
 const { User, Post, Comment, Like } = require('../models');
 const withAuth = require('../utils/auth');
@@ -108,3 +109,4 @@ router.post('/likes', withAuth, async (req, res) => {
 });
 
 module.exports = router;
+
