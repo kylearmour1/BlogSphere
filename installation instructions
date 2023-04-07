@@ -3,5 +3,7 @@
     source db/schema.sql
 3. node seeds/index.js
 4. npm run seed
+5. npm run db-sync
+6. npm start
 
-5. npm start
+
