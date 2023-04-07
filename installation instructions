@@ -1,31 +1,10 @@
-1. Express.js (Web framework for Node.js):
-npm install express
+1. npm install
+2. mysql -u root -p
+    source db/schema.sql
+3. node seeds/index.js
+4. npm run seed
 
-2. Handlebars.js (Template engine):
-npm install express-handlebars
-
-3. MySQL (Database):
-npm install mysql2
-
-4. Sequelize (ORM for the database):
-npm install sequelize
-
-5. Express Session (User authentication):
-npm install express-session
-
-6. Connect-session-sequelize (Session store for Sequelize):
- npm install connect-session-sequelize
- 
-7. Passport (Authentication middleware):
-npm install passport
-
-8. Passport-local (Local authentication strategy):
-npm install passport-local
-
-9. Bcrypt (Password hashing):
-npm install bcrypt
-
-10. Dotenv (Manage environment variables):
-npm install dotenv
+5. npm startnpmn
 
 
+5. npm start

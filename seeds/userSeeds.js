@@ -16,7 +16,7 @@ const userData = [
       },
       {
         username: 'JayMasters',
-        email: '',
+        email: 'jaymasters440@gmail.com',
         password: 'password444',
       },
 
@@ -24,3 +24,5 @@ const userData = [
   
   module.exports = userData;
   
+
+
