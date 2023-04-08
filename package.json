@@ -14,5 +14,4 @@
   "scripts": {
     "seed": "node seeds/index.js"
   }
-  
 }
