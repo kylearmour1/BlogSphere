@@ -6,10 +6,10 @@
   </div>
   <br>
   <h2 class="mb-4">Current Blogs</h1>
-  {{#each posts}}
-      <li>
-      <h2>{{title}}</h2>
+    {{#each posts}}
+    <li>
+      <h2><a href="/blogs/{{id}}" class="text-decoration-none text-reset">{{title}}</a></h2>
       <p>{{content}}</p>
     </li>
-  {{/each}}
+    {{/each}}
 </main>
