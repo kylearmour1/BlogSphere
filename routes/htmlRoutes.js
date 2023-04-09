@@ -22,7 +22,7 @@ router.get('/blogs', async (req, res) => {
     try {
         const posts = await Post.findAll({
           include: [{ model: User }, { model: Comment }, { model: Like }],
-          order: [['createdAt', 'DESC']],
+         
         });
         res.render('blog-list', {
           posts,
