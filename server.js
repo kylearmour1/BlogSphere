@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const hbs = exphbs.create({
   helpers: {
     get_emoji: () => {
-      const emojis = ['😀', '😎', '🤖', '🐳'];
+      const emojis = [];
       const randomIndex = Math.floor(Math.random() * emojis.length);
       return emojis[randomIndex];
     },

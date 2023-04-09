@@ -58,7 +58,7 @@ router.get('/blogs/:id', async (req, res) => {
   }
 });
 
-router.get('/new-post', withAuth, async (req, res) => {
+router.get('/blogs/create', withAuth, async (req, res) => {
   res.render('new-post', {
     logged_in: req.session.logged_in,
   });
