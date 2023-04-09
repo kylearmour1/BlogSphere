@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comment, Like } = require('../../models');
+const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -65,18 +65,6 @@ router.delete("/:id", withAuth, async (req, res) => {
     res.status(200).json(deletedPost);
   } catch (err) {
     res.status(500).json(err);
-  }
-});
-
-router.post('/likes', withAuth, async (req, res) => {
-  try {
-    const newLike = await Like.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
-    res.status(200).json(newLike);
-  } catch (err) {
-    res.status(400).json(err);
   }
 });
 
