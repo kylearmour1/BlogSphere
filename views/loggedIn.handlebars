@@ -8,14 +8,14 @@
 </head>
 <body>
   <h1>Login</h1>
-  <form class="login-form" action="/api/login" method="POST">
+  <form class="login-form" action="/users/login" method="POST">
     <input type="email" name="email" id="email-login" placeholder="Email" required>
     <input type="password" name="password" id="password-login" placeholder="Password" required>
     <button type="submit">Login</button>
   </form>
 
   <h1>Sign Up</h1>
-  <form class="signup-form" action="/api/users" method="POST">
+  <form class="signup-form" action="/users/signup" method="POST">
     <input type="text" name="name" id="name-signup" placeholder="Name" required>
     <input type="email" name="email" id="email-signup" placeholder="Email" required>
     <input type="password" name="password" id="password-signup" placeholder="Password" required>

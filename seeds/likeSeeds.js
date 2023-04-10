@@ -11,9 +11,6 @@ const likeData = [
   },
 ];
 
-const seedLikes = () => Like.bulkCreate(likeData);
+const likeSeeds = () => Like.bulkCreate(likeData);
 
-module.exports = seedLikes;
-
-
-
+module.exports = likeSeeds;
