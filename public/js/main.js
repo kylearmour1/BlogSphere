@@ -12,7 +12,9 @@ const newFormHandler = async (event) => {
         'Content-Type': 'application/json',
       },
     });
+    
 
+    
     if (response.ok) {
       const postData = await fetch('/api/posts');
       const posts = await postData.json();
@@ -33,7 +35,6 @@ const newFormHandler = async (event) => {
       document.querySelector('#blog-content').value = '';
     } else {
       alert('Failed to create blog post');
-    }
   }
 };
 
@@ -51,6 +52,7 @@ const delButtonHandler = async (event) => {
       alert('Failed to delete blog post');
     }
   }
+}
 };
 document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
 
