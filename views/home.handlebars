@@ -1,3 +1,16 @@
+<<<<<<< HEAD
 {{#each blogSphere as |BlogSphere|}}
 {{> BlogSphere-details}}
 {{/each}}
+=======
+{{#each users as |user| }}
+<div class="row align-center mb-5">
+  <div class="col-md-6">
+    <h2>{{{get_emoji}}} {{user.name}}</h2>
+  </div>
+  <div class="col-md-6">
+    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
+  </div>
+</div>
+{{/each}}
+>>>>>>> 3654aaa1d3e414bb33d888dfbda40421059a2110

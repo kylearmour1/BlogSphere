@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1. npm install
 2. mysql -u root -p
     source db/schema.sql
@@ -5,3 +6,5 @@
 4. npm run seed
 5. npm startnpmn
 6. npm start
+=======
+>>>>>>> 3654aaa1d3e414bb33d888dfbda40421059a2110
