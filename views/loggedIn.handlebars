@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" type="text/css" href="../public/css/style.css">
-  <link rel="stylesheet" type="text/css" href="../public/css/jass.css">
 </head>
+
 <body>
   <h1>Login</h1>
   <form class="login-form" action="/users/login" method="POST">
@@ -14,16 +15,6 @@
     <input type="password" name="password" id="password-login" placeholder="Password" required>
     <button type="submit">Login</button>
   </form>
-
-  <h1>Sign Up</h1>
-  <form class="signup-form" action="/users/signup" method="POST">
-    <input type="text" name="name" id="name-signup" placeholder="Name" required>
-    <input type="email" name="email" id="email-signup" placeholder="Email" required>
-    <input type="password" name="password" id="password-signup" placeholder="Password" required>
-    <button type="submit">Sign Up</button>
-  </form>
-
-  <script src="/js/loggedIn.js"></script>
-  <script src="/js/logout.js"></script>
 </body>
+
 </html>
