@@ -8,6 +8,13 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+app.use('/public/css', (req, res, next) => {
+  res.set('Content-Type', 'text/css');
+  next();
+  console.log('css');
+});
+app.use('/public', express.static('public'));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({

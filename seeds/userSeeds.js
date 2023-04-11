@@ -30,3 +30,5 @@ const userData = [
   });
 
   module.exports = userSeeds;
+
+  module.exports = userSeeds;
