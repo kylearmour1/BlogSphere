@@ -68,8 +68,4 @@ router.delete("/:id", withAuth, async (req, res) => {
   }
 });
 
-<<<<<<< HEAD
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> e6fdf102633e457e906b4acd3497e8019525d073
