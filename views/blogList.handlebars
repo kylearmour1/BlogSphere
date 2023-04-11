@@ -5,11 +5,11 @@
     </div>
   </div>
   <br>
-  <h2 class="mb-4">Current Blogs</h1>
-    {{#each posts}}
-    <li>
-      <h2><a href="/blogs/{{id}}" class="text-decoration-none text-reset">{{title}}</a></h2>
+  <h2 class="mb-4">Current Blogs</h2>
+  {{#each posts}}
+    <div class="card">
+      <h2>{{title}}</h2>
       <p>{{content}}</p>
-    </li>
-    {{/each}}
+    </div>
+  {{/each}}
 </main>

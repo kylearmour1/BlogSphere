@@ -14,3 +14,6 @@ const likeData = [
 const likeSeeds = () => Like.bulkCreate(likeData);
 
 module.exports = likeSeeds;
+
+
+module.exports = likeSeeds;
