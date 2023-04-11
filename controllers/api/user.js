@@ -107,6 +107,7 @@ router.get('/bloglist', async (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 router.post('/comments', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
@@ -132,3 +133,6 @@ router.post('/likes', withAuth, async (req, res) => {
 });
 
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> e6fdf102633e457e906b4acd3497e8019525d073
