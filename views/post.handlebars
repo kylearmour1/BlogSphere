@@ -1,7 +1,9 @@
 <main class="container mt-5">
   <article>
     <h1>{{title}}</h1>
-    <p>Written by: {{user.username}}</p>
+    <p>Written by {{user.username}} <br>
+        {{user.profile_picture}}
+    </p>
     <p>{{content}}</p>
   </article>
   {{#if true}}
@@ -20,9 +22,21 @@
   {{/if}}
   {{#each comments}}
   <div class="comment mb-3">
+ 
+    <div class="d-flex align-items-center">
+      <p class="ml-2">{{user.username}}</p>
+      <img src="../public/uploads/{{user.profile_picture}}" alt="Profile Picture" style="max-width: 50px; max-height: 50px;">
+      
+    </div>
     <p>{{content}}</p>
-    <p>By {{user.username}}</p>
   </div>
   {{/each}}
-  <script src="/js/delete.js"></script>
+
+
+   <script src="../public/js/upload-profile-picture.js"></script>
+
 </main>
+
+   <script src="/js/delete.js"></script>
+</main>
+

@@ -29,6 +29,6 @@ const userData = [
     returning: true,
   });
 
-  module.exports = userSeeds;
+
 
   module.exports = userSeeds;
