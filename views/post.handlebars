@@ -3,6 +3,7 @@
     <h1>{{title}}</h1>
     <p>Written by: {{user.username}}</p>
     <p>{{content}}</p>
+    <button class="btn delete-blog" data-id="{{id}}">Delete Post</button>
   </article>
   {{#if logged_in}}
   <form class="new-comment-form" class="mb-3">
@@ -18,6 +19,7 @@
   <div class="comment mb-3">
     <p>{{content}}</p>
     <p>By {{user.username}}</p>
+    <button class="btn delete-comment" data-comment-id="{{id}}">Delete Comment</button>
   </div>
   {{/each}}
 </main>
