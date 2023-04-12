@@ -27,6 +27,7 @@ Post.init(
       },
     },
   },
+  
   {
     sequelize,
     timestamps: false,
