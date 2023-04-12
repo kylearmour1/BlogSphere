@@ -131,4 +131,15 @@ router.post('/likes', withAuth, async (req, res) => {
   }
 });
 
+router.delete('/likes', withAuth, async (req, res) => {
+  try {
+    const deleteLike = await Like.create({
+      ...req.body,
+    });
+    res.status(200).json(deleteLike);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
+
 module.exports = router;
