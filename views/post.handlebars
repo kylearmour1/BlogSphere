@@ -4,42 +4,25 @@
     <p>Written by: {{user.username}}</p>
     <p>{{content}}</p>
   </article>
-  {{#if logged_in}}
-<<<<<<< HEAD
-    <form class="new-comment-form" class="mb-3">
-      <div class="mb-3">
-        <label for="comment" class="form-label">Add Comment:</label>
-        <textarea
-          class="form-control"
-          id="content-new-comment"
-          rows="3"
-          placeholder="Add a comment..."
-        ></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <button class="delete-btn" data-id="{{id}}">Delete</button>
-    </form>
+  {{#if true}}
+    <button id={{id}} class="delete-btn btn btn-primary">Delete</button>
   {{/if}}
-  <h3>Comment History:</h3>
-  {{#each comments}}
-    <div class="comment mb-3">
-      <p>{{content}}</p>
-      <p>By {{user.username}}</p>
-=======
+  <h3>Comments:</h3>
+  {{#if logged_in}}
   <form class="new-comment-form" class="mb-3">
     <div class="mb-3">
       <label for="comment" class="form-label">Add Comment:</label>
       <textarea class="form-control" id="content-new-comment" rows="3" placeholder="Add a comment"></textarea>
->>>>>>> 37adc945cdc752bffef00fb0bac49cfa74f30f72
     </div>
+    
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   {{/if}}
-  <h3>Comments:</h3>
   {{#each comments}}
   <div class="comment mb-3">
     <p>{{content}}</p>
     <p>By {{user.username}}</p>
   </div>
   {{/each}}
+   <script src="/js/delete.js"></script>
 </main>
