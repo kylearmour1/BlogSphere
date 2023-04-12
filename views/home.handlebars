@@ -1,10 +1,26 @@
-{{#each users as |user| }}
-<div class="row align-center mb-5">
-  <div class="col-md-6">
-    <h2>{{{get_emoji}}} {{user.name}}</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+  <title>Home</title>
+</head>
+<body>
+  <label for="profile_picture">Upload a profile picture:</label>
+  <input type="file" name="profile_picture" id="profile_picture" accept="image/*">
+  <button id="upload-button" type="button">Upload</button>
+
+  <div class="profile-container">
+    <p class="username">{{user.username}}</p>
+    {{#if user.profile_picture}}
+      <img class="profile-picture" src="/public/uploads/{{user.profile_ picture}}" alt="Profile Picture" />
+    {{/if}}
   </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
-  </div>
-</div>
-{{/each}}
+
+  <img id="preview-image" src="#" alt="Preview Profile Picture" style="display: none;">
+
+  <script src="../public/js/upload-profile-picture.js"></script>
+</body>
+</html>

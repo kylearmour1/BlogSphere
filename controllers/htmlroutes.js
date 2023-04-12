@@ -2,14 +2,14 @@ const router = require('express').Router();
 const { User, Post, Comment, Like } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Route to render homepage
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [{ model: User, attributes: ['username'] }],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render('home', {
+    res.render('home', { 
+      user: req.session.user,
       posts,
       logged_in: req.session.logged_in,
     });
@@ -18,7 +18,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-
 router.get('/blogs/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -26,7 +25,8 @@ router.get('/blogs/:id', withAuth, async (req, res) => {
         { model: User, attributes: ['username'] },
         {
           model: Comment,
-          include: [{ model: User, attributes: ['username'] }],
+          
+          include: [{ model: User, attributes: ['username', 'profile_picture'] }],
         },
       ],
     });
@@ -39,6 +39,8 @@ router.get('/blogs/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 router.get('/blogs', withAuth, async (req, res) => {
   try {
