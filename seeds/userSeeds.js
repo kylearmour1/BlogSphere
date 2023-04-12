@@ -32,3 +32,4 @@ const userData = [
 
 
   module.exports = userSeeds;
+
