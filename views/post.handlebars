@@ -3,10 +3,9 @@
     <h1>{{title}}</h1>
     <p>Written by: {{user.username}}</p>
     <p>{{content}}</p>
-    <button class="btn delete-blog" data-id="{{id}}">Delete Post</button>
   </article>
   {{#if true}}
-    <button id={{id}} class="delete-btn btn btn-primary">Delete</button>
+  <button id={{id}} class="delete-btn btn btn-primary">Delete</button>
   {{/if}}
   <h3>Comments:</h3>
   {{#if logged_in}}
@@ -15,7 +14,7 @@
       <label for="comment" class="form-label">Add Comment:</label>
       <textarea class="form-control" id="content-new-comment" rows="3" placeholder="Add a comment"></textarea>
     </div>
-    
+
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   {{/if}}
@@ -23,8 +22,7 @@
   <div class="comment mb-3">
     <p>{{content}}</p>
     <p>By {{user.username}}</p>
-    <button class="btn delete-comment" data-comment-id="{{id}}">Delete Comment</button>
   </div>
   {{/each}}
-   <script src="/js/delete.js"></script>
+  <script src="/js/delete.js"></script>
 </main>
