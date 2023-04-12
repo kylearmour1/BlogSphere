@@ -96,7 +96,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.get('/bloglist', async (req, res) => {
+router.get('/blogs', withAuth,async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [{ model: User }, { model: Comment }],
