@@ -6,16 +6,20 @@
     </p>
     <p>{{content}}</p>
   </article>
+  {{#if true}}
+    <button id={{id}} class="delete-btn btn btn-primary">Delete</button>
+  {{/if}}
+  <h3>Comments:</h3>
   {{#if logged_in}}
   <form class="new-comment-form" class="mb-3">
     <div class="mb-3">
       <label for="comment" class="form-label">Add Comment:</label>
       <textarea class="form-control" id="content-new-comment" rows="3" placeholder="Add a comment"></textarea>
     </div>
+    
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   {{/if}}
-  <h3>Comments:</h3>
   {{#each comments}}
   <div class="comment mb-3">
  
@@ -28,23 +32,11 @@
   </div>
   {{/each}}
 
+
    <script src="../public/js/upload-profile-picture.js"></script>
 
 </main>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+   <script src="/js/delete.js"></script>
+</main>
 
