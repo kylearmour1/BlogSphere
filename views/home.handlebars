@@ -1,0 +1,68 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css" />
+    <title>Welcome to BlogSphere</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-center">Welcome to BlogSphere</h1>
+    </header>
+    <section class="intro">
+      <div class="container">
+        <h2 class="text-center">A Place to Share Your Stories</h2>
+        <p class="text-center">BlogSphere is a community-driven blogging
+          platform where you can create, share, and engage with content from
+          users around the world. Our mission is to provide a space for everyone
+          to express themselves, share their perspectives, and learn from one
+          another.</p>
+      </div>
+    </section>
+
+    <section class="profile">
+      <div class="container">
+        <h2 class="text-center">Your Profile</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <label for="profile_picture">Upload a profile picture:</label>
+            <input
+              type="file"
+              name="profile_picture"
+              id="profile_picture"
+              accept="image/*"
+            />
+            <button id="upload-button" type="button">Upload</button>
+            <img
+              id="preview-image"
+              src="#"
+              alt="Preview Profile Picture"
+              style="display: none;"
+            />
+          </div>
+          <div class="col-md-6">
+            <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
+            <div class="profile-container">
+              <p class="username">{{user.username}}</p>
+              {{#if user.profile_picture}}
+                <img
+                  class="profile-picture"
+                  src="/public/uploads/{{user.profile_ picture}}"
+                  alt="Profile Picture"
+                />
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="text-center">BlogSphere &copy; 2023. All rights reserved.</p>
+    </footer>
+
+    <script src="../public/js/upload-profile-picture.js"></script>
+  </body>
+</html>
