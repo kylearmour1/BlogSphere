@@ -2,11 +2,16 @@
   <article>
     <h1>{{title}}</h1>
     <p>Written by {{user.username}} <br>
-        {{user.profile_picture}}
+      {{user.profile_picture}}
     </p>
     <p>{{content}}</p>
   </article>
   {{#if true}}
+  <form action="/posts/{{post.id}}/like" method="post">
+    <button type="submit">Like</button>
+  </form>
+  <p>{{post.likes}} likes</p>
+
   <button id={{id}} class="delete-btn btn btn-primary">Delete</button>
   {{/if}}
   <h3>Comments:</h3>
@@ -22,21 +27,21 @@
   {{/if}}
   {{#each comments}}
   <div class="comment mb-3">
- 
+
     <div class="d-flex align-items-center">
       <p class="ml-2">{{user.username}}</p>
-      <img src="../public/uploads/{{user.profile_picture}}" alt="Profile Picture" style="max-width: 50px; max-height: 50px;">
-      
+      <img src="../public/uploads/{{user.profile_picture}}" alt="Profile Picture"
+        style="max-width: 50px; max-height: 50px;">
+
     </div>
     <p>{{content}}</p>
   </div>
   {{/each}}
 
 
-   <script src="../public/js/upload-profile-picture.js"></script>
+  <script src="../public/js/upload-profile-picture.js"></script>
 
 </main>
 
-   <script src="/js/delete.js"></script>
+<script src="/js/delete.js"></script>
 </main>
-
