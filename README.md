@@ -75,16 +75,16 @@ If you have any additional inquiries or require further clarification, please do
   ## Jay Masters
   ### Github: https://github.com/jaymasters440
   ### Email:  [jaymasters440@gmail.com](mailto:jaymasters440@gmail.com)
-  ### Linkedin: https://www.linkedin.com/in/
+  ### Linkedin: https://www.linkedin.com/in/jay-masters-95362968/
 
   ## Linh Tran
   ### Github: https://github.com/linhntran
-  ### Email:  [kylejarmour@gmail.com](mailto:kylejarmour@gmail.com)
-  ### Linkedin: https://www.linkedin.com/in/kyle-armour-5879aa261/
+  ### Email:  [tran.linhn@gmail.com](mailto:tranlinhn@gmail.com)
+  ### Linkedin: https://www.linkedin.com/in/linhn-tran/
 
 
   ## Brandon
-  ### Github: https://github.com/jaymasters440
-  ### Email:  [jaymasters440@gmail.com](mailto:jaymasters440@gmail.com)
-  ### Linkedin: https://www.linkedin.com/in/
+  ### Github: https://github.com/bg2398
+  ### Email:  [brandon_g909@yahoo.com](mailto:brandon_g909@yahoo.com)
+ 
 
