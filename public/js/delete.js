@@ -10,7 +10,11 @@ const onDelete = async (id) => {
   }
 };
 
-document.querySelector(".delete-btn").addEventListener("click", (event) => {
-  const id = event.target.getAttribute("id");
-  onDelete(id);
-});
+const deletePostHandler = (event) => {
+  if (event.target.matches(".delete-btn")) {
+    const post_id = event.target.getAttribute("id");
+    onDelete(post_id);
+  }
+};
+
+document.addEventListener("click", deletePostHandler);
