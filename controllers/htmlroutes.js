@@ -1,14 +1,14 @@
-const router = require('express').Router();
-const { User, Post, Comment, Like } = require('../models');
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const { User, Post, Comment, } = require("../models");
+const withAuth = require("../utils/auth");
 
-router.get('/', async (req, res) => {
+router.get("/home", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [{ model: User, attributes: ['username'] }],
+      include: [{ model: User, attributes: ["username"] }],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render('home', { 
+    res.render("home", {
       user: req.session.user,
       posts,
       logged_in: req.session.logged_in,
@@ -18,20 +18,22 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/blogs/:id', withAuth, async (req, res) => {
+router.get("/blogs/:id", withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
-        { model: User, attributes: ['username'] },
+        { model: User, attributes: ["username"] },
         {
           model: Comment,
-          
-          include: [{ model: User, attributes: ['username', 'profile_picture'] }],
+
+          include: [
+            { model: User, attributes: ["username", "profile_picture"] },
+          ],
         },
       ],
     });
     const post = postData.get({ plain: true });
-    res.render('post', {
+    res.render("post", {
       ...post,
       logged_in: req.session.logged_in,
     });
@@ -40,9 +42,7 @@ router.get('/blogs/:id', withAuth, async (req, res) => {
   }
 });
 
-
-
-router.get('/blogs', withAuth, async (req, res) => {
+router.get("/blogs", withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
       include: [{ model: User }, { model: Comment }],
@@ -50,7 +50,7 @@ router.get('/blogs', withAuth, async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('blogList', {
+    res.render("blogList", {
       posts,
       logged_in: req.session.logged_in,
     });
@@ -59,30 +59,29 @@ router.get('/blogs', withAuth, async (req, res) => {
   }
 });
 
-
-router.get('/newpost', withAuth, (req, res) => {
+router.get("/newpost", withAuth, (req, res) => {
   if (req.session.logged_in) {
-    res.render('newPost');
+    res.render("newPost");
     return;
   }
-  res.redirect('/login');
+  res.redirect("/login");
 });
 
-router.get('/login', (req, res) => {
+router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/blogs');
+    res.redirect("/home");
     return;
   }
   const error = req.query.error;
-  res.render('loggedIn');
+  res.render("loggedIn");
 });
 
-router.get('/signup', (req, res) => {
+router.get("/signup", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/blogs');
+    res.redirect("/home");
     return;
   }
-  res.render('signup');
+  res.render("signup");
 });
 
 module.exports = router;
