@@ -16,8 +16,30 @@
   
   ## Installation
   
-  The pogram is deployed on Heroku and is interactive. 
-  
+1. Install the dependencies by running npm install 
+
+2. update the .env.EXAMPLE file in the root directory of the project and add the following environment variables:
+
+   - PORT: Port number to run the server (default is 3001)
+   - SECRET: Secret key to use for express-session
+
+4. run mysql for the following commands to create your database:
+   - mysql -u root -p
+   - input your password
+   - source db/schema.sql
+   - exit;
+
+5. npm run seed
+
+6. node seeds/index.js
+
+7. npm start  to start the server
+
+8. Open your browser and navigate to http://localhost:3001
+
+9. Make sure to have Node.js and npm installed on your machine before starting the installation process.
+
+
   ## Usage
   
   We would like anyone who wants to use the porgram for putting down thoughts and possitive comments to use the program for that purpose. 
@@ -38,16 +60,31 @@
   
   ## Contribution
   
-
+https://github.com/kylearmour1/BlogSphere
   
   
   ## Questions
+If you have any additional inquiries or require further clarification, please do not hesitate to contact me via any of the following channels:
 
-  [github.com/jaymasters440](github.com/jaymasters440)
-  
+  ## Kyle Armour
+  ### Github: https://github.com/kylearmour1
+  ### Email:  [kylejarmour@gmail.com](mailto:kylejarmour@gmail.com)
+  ### Linkedin: https://www.linkedin.com/in/kyle-armour-5879aa261/
 
 
+  ## Jay Masters
+  ### Github: https://github.com/jaymasters440
+  ### Email:  [jaymasters440@gmail.com](mailto:jaymasters440@gmail.com)
+  ### Linkedin: https://www.linkedin.com/in/
+
+  ## Linh Tran
+  ### Github: https://github.com/linhntran
+  ### Email:  [kylejarmour@gmail.com](mailto:kylejarmour@gmail.com)
+  ### Linkedin: https://www.linkedin.com/in/kyle-armour-5879aa261/
 
 
+  ## Brandon
+  ### Github: https://github.com/jaymasters440
+  ### Email:  [jaymasters440@gmail.com](mailto:jaymasters440@gmail.com)
+  ### Linkedin: https://www.linkedin.com/in/
 
-  [jaymasters440@gmail.com](jaymasters440@gmail.com)

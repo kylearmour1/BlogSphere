@@ -1,29 +1,29 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-const { Post, User, Comment } = require('../../models');
+const { Post, User, Comment } = require("../../models");
 
-const withAuth = require('../../utils/auth');
+const withAuth = require("../../utils/auth");
 
-router.get('/', async (req, res) => {
+router.get("/home", async (req, res) => {
   try {
     const postData = await Post.findAll({
-      include: [{ model: User, attributes: ['username', 'profile_picture'] }],
+      include: [{ model: User, attributes: ["username", "profile_picture"] }],
     });
     const posts = postData.map((post) => post.get({ plain: true }));
-    res.render('homepage', { posts, logged_in: req.session.logged_in });
+    res.render("homepage", { posts, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
-        { model: User, attributes: ['username', 'profile_picture'] },
+        { model: User, attributes: ["username", "profile_picture"] },
         {
           model: Comment,
-          include: [{ model: User, attributes: ['username'] }],
+          include: [{ model: User, attributes: ["username"] }],
         },
       ],
     });
@@ -34,7 +34,7 @@ router.get('/:id', async (req, res) => {
     }
 
     const post = postData.get({ plain: true });
-    res.render('post', {
+    res.render("post", {
       ...post,
       logged_in: req.session.logged_in,
     });
@@ -43,8 +43,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-
-router.post('/', withAuth, async (req, res) => {
+router.post("/", withAuth, async (req, res) => {
   try {
     const newPost = await Post.create({
       ...req.body,
@@ -55,7 +54,6 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
-
 
 router.delete("/:id", withAuth, async (req, res) => {
   try {

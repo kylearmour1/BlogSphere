@@ -20,7 +20,7 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   {{/if}}
-  {{#each comments}}
+  {{#each (reverse comments)}}
   <div class="comment mb-3">
  
     <div class="d-flex align-items-center">
