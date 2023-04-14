@@ -6,7 +6,6 @@ header {
 margin-bottom: 20px;
   padding: 15px;
   background-color: rgb(60, 64, 64);
-
 }
 
 .navbar {
@@ -51,6 +50,7 @@ li {
 }
 
 .card {
+
   margin: 0px;
   padding: 80px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -58,9 +58,11 @@ li {
   border-color: black;
 }
 
+
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
 
 .container {
   padding: 2px 16px;
@@ -85,6 +87,7 @@ h3 {
   justify-content: center;
 }
 
+
 .btn-primary {
   background-color: #0a0a0a;
   color: #ffffff;
@@ -94,6 +97,7 @@ h3 {
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
 }
+
 
 .btn-primary:hover {
   background-color: #fbfefe;
