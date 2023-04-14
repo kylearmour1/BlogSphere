@@ -20,6 +20,7 @@ const newCommentFormHandler = async (event) => {
   }
 };
 
-document
-  .querySelector(".new-comment-form")
-  .addEventListener("submit", newCommentFormHandler);
+const newComment = document.querySelector(".new-comment-form");
+if (newComment) {
+  newComment.addEventListener("submit", newCommentFormHandler);
+}
