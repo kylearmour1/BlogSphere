@@ -1,10 +1,12 @@
 body {
-  background-color: rgb(246, 248, 248);
+  background-color: rgb(120, 134, 134);
 }
 
 header {
-  margin-bottom: 20px;
+margin-bottom: 20px;
   padding: 15px;
+  background-color: rgb(60, 64, 64);
+
   background-color: rgb(52, 53, 53);
 }
 
@@ -12,7 +14,7 @@ header {
   color: rgb(248, 246, 246);
 }
 .navbar-nav {
-  text-align: center;
+text-align: center;
 }
 
 .nav-item {
@@ -20,12 +22,12 @@ header {
   display: inline;
   flex-direction: column;
 }
-.nav-link {
+.nav-link{
   margin: 5px;
   padding: 10px;
   text-align: center;
-  justify-content: center;
-  color: white;
+ justify-content: center;
+ color: white;
 }
 
 h1 {
@@ -50,23 +52,26 @@ li {
 }
 
 .card {
+
   margin: 0px;
   padding: 80px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   border-color: black;
 }
 
+
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
 
 .container {
   padding: 2px 16px;
 }
 
 h2 {
-  border-style: inset;
+  border-style:inset;
   text-align: center;
 }
 
@@ -84,6 +89,7 @@ h3 {
   justify-content: center;
 }
 
+
 .btn-primary {
   background-color: #0a0a0a;
   color: #ffffff;
@@ -94,17 +100,19 @@ h3 {
   transition: background-color 0.3s ease-in-out;
 }
 
+
 .btn-primary:hover {
   background-color: #fbfefe;
   color: black;
   cursor: pointer;
 }
 
-#btn-primary {
+
+ #btn-primary{
   display: block;
   margin: 0 auto;
 }
-
+  
 #preview-image {
   width: 75px;
   height: 75px;
@@ -117,8 +125,4 @@ img {
   object-fit: cover;
   border-radius: 50%;
   text-align: center;
-}
-
-.btn btn-primary {
-  border: 1px solid black;
 }
