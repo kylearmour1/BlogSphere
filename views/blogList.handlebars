@@ -7,13 +7,10 @@
   <br />
   <h2 class="mb-4">Current Blogs</h2>
   {{#each (reverse posts)}}
-    <div class="card">
-      <h2>{{user.username}}</h2>
-      <h2><a
-          href="/blogs/{{id}}"
-          class="text-decoration-none text-reset"
-        >{{title}}</a></h2>
-      <p>{{content}}</p>
-    </div>
+  <div class="card">
+    <h2><a href="/blogs/{{id}}" class="text-decoration-none text-reset">{{title}}</a></h2>
+    <h3>{{user.username}}</h3>
+    <p>{{content}}</p>
+  </div>
   {{/each}}
 </main>
