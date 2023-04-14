@@ -27,7 +27,7 @@ router.get("/blogs/:id", withAuth, async (req, res) => {
           model: Comment,
 
           include: [
-            { model: User, attributes: ["username", "profile_picture"] },
+            { model: User, attributes: ["username"] },
           ],
         },
       ],

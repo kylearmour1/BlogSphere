@@ -36,10 +36,6 @@ User.init(
         len: [8],
       },
     },
-    profile_picture: {
-      type: DataTypes.STRING,
-      alloweNull: true,
-    },
   },
   {
     hooks: {

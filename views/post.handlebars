@@ -2,7 +2,6 @@
   <article>
     <h1>{{title}}</h1>
     <p>Written by {{user.username}} <br>
-      {{user.profile_picture}}
     </p>
     <p>{{content}}</p>
   </article>
@@ -16,7 +15,6 @@
       <label for="comment" class="form-label">Add Comment:</label>
       <textarea class="form-control" id="content-new-comment" rows="3" placeholder="Add a comment"></textarea>
     </div>
-
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   {{/if}}
