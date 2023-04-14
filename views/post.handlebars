@@ -7,11 +7,6 @@
     <p>{{content}}</p>
   </article>
   {{#if true}}
-  <form action="/posts/{{post.id}}/like" method="post">
-    <button type="submit">Like</button>
-  </form>
-  <p>{{post.likes}} likes</p>
-
   <button id={{id}} class="delete-btn btn btn-primary">Delete</button>
   {{/if}}
   <h3>Comments:</h3>
@@ -30,17 +25,10 @@
 
     <div class="d-flex align-items-center">
       <p class="ml-2">{{user.username}}</p>
-      <img src="../public/uploads/{{user.profile_picture}}" alt="Profile Picture"
-        style="max-width: 50px; max-height: 50px;">
-
     </div>
     <p>{{content}}</p>
   </div>
   {{/each}}
-
-
-  <script src="../public/js/upload-profile-picture.js"></script>
-
 </main>
 
 <script src="/js/delete.js"></script>

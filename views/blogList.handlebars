@@ -8,12 +8,6 @@
   <h2 class="mb-4">Current Blogs</h2>
   {{#each (reverse posts)}}
     <div class="card">
-      {{#if user.profile_picture}}
-        <img
-          src="../public/uploads/{{user.profile_picture}}"
-          alt="Profile Picture"
-        />
-      {{/if}}
       <h2>{{user.username}}</h2>
       <h2><a
           href="/blogs/{{id}}"
@@ -22,6 +16,4 @@
       <p>{{content}}</p>
     </div>
   {{/each}}
-
-  <script src="../public/js/upload-profile-picture.js"></script>
 </main>
