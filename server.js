@@ -7,17 +7,6 @@ const session = require("express-session");
 const multer = require("multer");
 const User = require("./models/user");
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "public/uploads/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
-  },
-});
-
-const upload = multer({ storage: storage });
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 const Handlebars = require("handlebars");
