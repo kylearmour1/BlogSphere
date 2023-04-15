@@ -1,30 +1,28 @@
-<main class="container mt-5">
-  <article>
-    <h1>{{title}}</h1>
-    <p>Written by {{user.username}} <br>
-    </p>
-    <p>{{content}}</p>
-  </article>
-  {{#if true}}
-  <button id={{id}} class="delete-btn btn btn-primary">Delete</button>
-  {{/if}}
-  <h3>Comments:</h3>
-  {{#if logged_in}}
-  <form class="new-comment-form" class="mb-3">
-    <div class="mb-3">
-      <label for="comment" class="form-label">Add Comment:</label>
-      <textarea class="form-control" id="content-new-comment" rows="3" placeholder="Add a comment"></textarea>
+<main class="container mt-4">
+    <article>
+        <h1>{{title}}</h1>
+        <p class="ml-2 text-center">Written by {{user.username}}</p>
+        <p class="lead text-center">{{content}}</p>
+    </article>
+    {{#if true}}
+    <button id={{id}} class="delete-btn btn btn-primary btn-sm">Delete</button>
+    {{/if}}
+    <h5>Comments</h5>
+    {{#each (reverse comments)}}
+    <div class="comment-box form-outline w-50">
+        <div class="border border-dark">
+            <p class="ml-2">{{user.username}}</p>
+            <p>{{content}}</p>
+        </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-  {{/if}}
-  {{#each (reverse comments)}}
-  <div class="comment mb-3">
+    {{/each}}
 
-    <div class="d-flex align-items-center">
-      <p class="ml-2">{{user.username}}</p>
-    </div>
-    <p>{{content}}</p>
-  </div>
-  {{/each}}
+    {{#if logged_in}}
+    <form class="comment-box new-comment-form" class="mb-3">
+        <div class="mb-3">
+            <textarea class="form-outline w-50" id="content-new-comment" rows="3" placeholder="Add a comment"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+    </form>
+    {{/if}}
 </main>
