@@ -1,20 +1,21 @@
 const onDelete = async (id) => {
   const response = await fetch(`/api/posts/${id}`, {
-    method: "DELETE",
+    method: 'DELETE',
   });
 
   if (response.ok) {
-    document.location.replace("/blogs");
+    document.location.replace('/blogs')
   } else {
     alert(response.statusText);
   }
 };
 
-const deletePostHandler = (event) => {
-  if (event.target.matches(".delete-btn")) {
-    const post_id = event.target.getAttribute("id");
-    onDelete(post_id);
-  }
-};
+const deletePostHandler = document.querySelector('.delete-btn');
 
-document.addEventListener("click", deletePostHandler);
+if (deletePostHandler) {
+  document.addEventListener('click', (event) => {
+
+    const id = event.target.getAttribute('id');
+    onDelete(id);
+  });
+}
