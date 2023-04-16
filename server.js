@@ -7,6 +7,17 @@ const session = require("express-session");
 const multer = require("multer");
 const User = require("./models/user");
 
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "public/uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 const Handlebars = require("handlebars");
@@ -52,6 +63,38 @@ app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 app.set("views", path.join(__dirname, "views"));
+
+app.post(
+  "/api/profile-picture",
+  upload.single("profile_picture"),
+  async (req, res) => {
+    if (!req.session.user_id) {
+      res.status(401).json({ url: "./public/uploads/${req.file.filename}" });
+      return;
+    }
+
+    try {
+      const updatedUser = await User.update(
+        { profile_picture: req.file.filename },
+        { where: { id: req.session.user_id } }
+      );
+
+      if (!updatedUser) {
+        res.status(404).json({ message: "User not found." });
+        return;
+      }
+
+      res
+        .status(200)
+        .json({
+          message: "Profile picture uploaded successfully.",
+          url: `/public/uploads/${req.file.filename}`,
+        });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  }
+);
 
 app.use(routes);
 
