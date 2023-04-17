@@ -1,5 +1,5 @@
-const router = require('express').Router();
-const { Post, User, Comment } = require('../../models');
+const router = require("express").Router();
+const { Post, User, Comment } = require("../../models");
 
 const withAuth = require("../../utils/auth");
 
@@ -56,6 +56,20 @@ router.post("/", withAuth, async (req, res) => {
 
 router.delete("/:id", withAuth, async (req, res) => {
   try {
+    const post = await Post.findOne({
+      where: { id: req.params.id },
+    });
+
+    if (!post) {
+      res.status(404).json({ message: "No post found with that id!" });
+      return;
+    } else if (post.user_id !== req.session.user_id) {
+      res
+        .status(403)
+        .json({ message: "You do not have permission to delete this post!" });
+      return;
+    }
+
     await Comment.destroy({
       where: { post_id: req.params.id },
     });
@@ -64,10 +78,6 @@ router.delete("/:id", withAuth, async (req, res) => {
       where: { id: req.params.id },
     });
 
-    if (!deletedPost) {
-      res.status(404).json({ message: "No post found with that id!" });
-      return;
-    }
     res.status(200).json(deletedPost);
   } catch (err) {
     res.status(500).json(err);
